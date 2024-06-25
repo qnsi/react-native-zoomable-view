@@ -1147,6 +1147,8 @@ class ReactNativeZoomableView extends Component<
       visualTouchFeedbackEnabled,
       doubleTapDelay,
       staticPinPosition,
+      onStaticPinLongPress,
+      onStaticPinPress,
     } = this.props;
     const { pinSize, touches, debugPoints = [] } = this.state;
 
@@ -1196,6 +1198,9 @@ class ReactNativeZoomableView extends Component<
             staticPinIcon={staticPinIcon}
             staticPinPosition={staticPinPosition}
             pinSize={pinSize}
+            onPress={onStaticPinPress}
+            onLongPress={onStaticPinLongPress}
+            onParentMove={this._handlePanResponderMove}
             pinAnim={this.pinAnim}
             setPinSize={(size: Size2D) => this.setState({ pinSize: size })}
           />

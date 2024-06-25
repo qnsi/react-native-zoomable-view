@@ -138,6 +138,8 @@ export interface ReactNativeZoomableViewProps extends ViewProps {
     gestureState: PanResponderGestureState,
     zoomableViewEventObject: ZoomableViewEvent
   ) => boolean;
+  onStaticPinPress?: (event: GestureResponderEvent) => void;
+  onStaticPinLongPress?: (event: GestureResponderEvent) => void;
   staticPinPosition?: Vec2D;
   staticPinIcon?: React.ReactElement;
   onStaticPinPositionChange?: (position: Vec2D) => void;
