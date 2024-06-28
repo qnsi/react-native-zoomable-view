@@ -145,6 +145,7 @@ export interface ReactNativeZoomableViewProps extends ViewProps {
   onStaticPinPositionChange?: (position: Vec2D) => void;
   onStaticPinPositionMove?: (position: Vec2D) => void;
   animatePin: boolean;
+  pinProps?: ViewProps;
   disableMomentum?: boolean;
 }
 

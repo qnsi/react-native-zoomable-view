@@ -7,6 +7,7 @@ import {
   GestureResponderEvent,
   PanResponderGestureState,
   PanResponder,
+  ViewProps,
 } from 'react-native';
 import { Size2D } from 'src/typings';
 
@@ -19,6 +20,7 @@ export const StaticPin = ({
   onPress,
   onLongPress,
   setPinSize,
+  pinProps = {},
 }: {
   staticPinPosition: { x: number; y: number };
   pinAnim: Animated.ValueXY;
@@ -32,6 +34,7 @@ export const StaticPin = ({
   onPress?: (evt: GestureResponderEvent) => void;
   onLongPress?: (evt: GestureResponderEvent) => void;
   setPinSize: (size: Size2D) => void;
+  pinProps?: ViewProps;
 }) => {
   const tapTime = React.useRef(0);
   const transform = [
@@ -81,6 +84,7 @@ export const StaticPin = ({
         styles.pinWrapper,
         { opacity, transform },
       ]}
+      {...pinProps}
     >
       <View
         onLayout={({ nativeEvent: { layout } }) => setPinSize(layout)}

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Animated, GestureResponderEvent, PanResponderGestureState } from 'react-native';
+import { Animated, GestureResponderEvent, PanResponderGestureState, ViewProps } from 'react-native';
 import { Size2D } from 'src/typings';
-export declare const StaticPin: ({ staticPinPosition, pinAnim, staticPinIcon, pinSize, onParentMove, onPress, onLongPress, setPinSize, }: {
+export declare const StaticPin: ({ staticPinPosition, pinAnim, staticPinIcon, pinSize, onParentMove, onPress, onLongPress, setPinSize, pinProps, }: {
     staticPinPosition: {
         x: number;
         y: number;
@@ -14,4 +14,5 @@ export declare const StaticPin: ({ staticPinPosition, pinAnim, staticPinIcon, pi
     onPress?: (evt: GestureResponderEvent) => void;
     onLongPress?: (evt: GestureResponderEvent) => void;
     setPinSize: (size: Size2D) => void;
+    pinProps?: ViewProps;
 }) => JSX.Element;
