@@ -147,6 +147,14 @@ export interface ReactNativeZoomableViewProps extends ViewProps {
   animatePin: boolean;
   pinProps?: ViewProps;
   disableMomentum?: boolean;
+  onStartShouldSetPanResponderCapture?: (
+    event: GestureResponderEvent,
+    gestureState: PanResponderGestureState
+  ) => boolean;
+  onMoveShouldSetPanResponderCapture?: (
+    event: GestureResponderEvent,
+    gestureState: PanResponderGestureState
+  ) => boolean;
 }
 
 export interface Vec2D {
