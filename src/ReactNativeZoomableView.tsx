@@ -229,12 +229,12 @@ class ReactNativeZoomableView extends Component<
       const boundOffset =
         contentSize && containerSize
           ? applyPanBoundariesToOffset(
-              offset,
-              containerSize,
-              contentSize,
-              this.zoomLevel,
-              this.props.panBoundaryPadding
-            )
+            offset,
+            containerSize,
+            contentSize,
+            this.zoomLevel,
+            this.props.panBoundaryPadding
+          )
           : offset;
 
       if (
@@ -379,13 +379,13 @@ class ReactNativeZoomableView extends Component<
         // (no border, space, or anything between them)
         const zoomSubjectWrapperRef = this.zoomSubjectWrapperRef;
         // we don't wanna measure when zoomSubjectWrapperRef is not yet available or has been unmounted
-        zoomSubjectWrapperRef.current?.measureInWindow(
-          (x, y, width, height) => {
+        zoomSubjectWrapperRef.current?.measure(
+          (x, y, width, height, pageX, pageY) => {
             this.setState({
               originalWidth: width,
               originalHeight: height,
-              originalPageX: x,
-              originalPageY: y,
+              originalPageX: pageX,
+              originalPageY: pageY,
             });
           }
         );
